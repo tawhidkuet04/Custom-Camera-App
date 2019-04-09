@@ -16,14 +16,15 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-//  //  self.window = [ [ UIWindow alloc] initWithFrame:[ [ UIScreen mainScreen] bounds ] ];
-//    ViewController *itemsViewController = [ [ViewController  alloc] init ];
-//    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:itemsViewController];
-//    self.window.rootViewController = navController;
-//    self.window.backgroundColor = [ UIColor whiteColor ];
-//    [ self.window makeKeyAndVisible ];
-    //    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard"
     [application setStatusBarHidden:YES];
+   self.window = [ [ UIWindow alloc] initWithFrame:[ [ UIScreen mainScreen] bounds ] ];
+    ViewController *itemsViewController = [ [ViewController  alloc] init ];
+    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:itemsViewController];
+    self.window.rootViewController = itemsViewController;
+    self.window.backgroundColor = [ UIColor whiteColor ];
+    [ self.window makeKeyAndVisible ];
+      //  UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"MainStoryboard"
+    
     // Override point for customization after application launch.
     return YES;
 }

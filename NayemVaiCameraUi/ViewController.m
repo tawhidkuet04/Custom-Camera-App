@@ -8,7 +8,7 @@
 
 #import "ViewController.h"
 #import <AVFoundation/AVFoundation.h>
-
+#import "imageShowViewController.h"
 @interface ViewController ()<UIImagePickerControllerDelegate>{
 
 
@@ -20,14 +20,16 @@
 @implementation ViewController
 
 -(void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator{
+   
     [coordinator animateAlongsideTransition:^(id  _Nonnull context) {
       
         self->previewLayer.frame = self->myView.bounds;
         self->previewLayer.videoGravity = AVLayerVideoGravityResizeAspectFill;
         
     } completion:^(id  _Nonnull context) {
+         NSLog(@"changed");
         if(size.height == 375){
-             self->previewLayer.connection.videoOrientation = AVCaptureVideoOrientationLandscapeLeft;
+             self->previewLayer.connection.videoOrientation = AVCaptureVideoOrientationLandscapeRight;
         }else {
             
              previewLayer.connection.videoOrientation = AVCaptureVideoOrientationPortrait;
@@ -42,6 +44,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    NSLog(@"opened");
+    
     // Do any additional setup after loading the view.
     
     //Capture Session
@@ -63,11 +67,9 @@
     [session addInput:input];
     
     //Output
-    AVCaptureVideoDataOutput *output = [[AVCaptureVideoDataOutput alloc] init];
+    output = [[AVCapturePhotoOutput alloc] init];
     [session addOutput:output];
-    output.videoSettings =
-    @{ (NSString *)kCVPixelBufferPixelFormatTypeKey : @(kCVPixelFormatType_32BGRA) };
-    
+   
     //Preview Layer
     previewLayer = [[AVCaptureVideoPreviewLayer alloc] initWithSession:session];
     myView = cameraView;
@@ -83,10 +85,28 @@
 
 }
 - (IBAction)cameraButtonPressed:(id)sender {
-
+    
+    AVCapturePhotoSettings *settings = [[AVCapturePhotoSettings alloc]init];
+    settings.flashMode =  AVCaptureFlashModeAuto ;
+    [output capturePhotoWithSettings:settings delegate:self];
+    
     NSLog(@"Pressed");
+    
 }
+-(void)captureOutput:(AVCapturePhotoOutput *)captureOutput didFinishProcessingPhotoSampleBuffer:(CMSampleBufferRef)photoSampleBuffer previewPhotoSampleBuffer:(CMSampleBufferRef)previewPhotoSampleBuffer resolvedSettings:(AVCaptureResolvedPhotoSettings *)resolvedSettings bracketSettings:(AVCaptureBracketedStillImageSettings *)bracketSettings error:(NSError *)error
+{
+    if (error) {
+        NSLog(@"error : %@", error.localizedDescription);
+    }
+    
+    if (photoSampleBuffer) {
+        NSData *data = [AVCapturePhotoOutput JPEGPhotoDataRepresentationForJPEGSampleBuffer:photoSampleBuffer previewPhotoSampleBuffer:previewPhotoSampleBuffer];
+        UIImage *image = [UIImage imageWithData:data];
+        imageShowViewController *imageController = [[ imageShowViewController alloc]init];
+        imageController.imageToSend = image;
+        [self presentViewController:imageController animated:YES completion:nil];
 
-
+    }
+}
 
 @end

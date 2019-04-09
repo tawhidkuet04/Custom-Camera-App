@@ -13,6 +13,7 @@
     AVCaptureVideoPreviewLayer *previewLayer;
     UIView *myView;
     AVCaptureSession *session ;
+    AVCapturePhotoOutput *output;
 }
 @end
 

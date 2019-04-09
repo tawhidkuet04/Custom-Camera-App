@@ -10,6 +10,9 @@
 		13378CB2E7C3800F8A4AA9BB /* Pods_NayemVaiCameraUi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A945D7F51DA9D32FF27C6590 /* Pods_NayemVaiCameraUi.framework */; };
 		1E218DC65FAEE256155F7CE0 /* Pods_NayemVaiCameraUiUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98B1C6C9DCC325A052FA2478 /* Pods_NayemVaiCameraUiUITests.framework */; };
 		25A0E504801A6ABA5CB6951B /* Pods_NayemVaiCameraUiTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 548269942A5AAE5D5ECF7BF8 /* Pods_NayemVaiCameraUiTests.framework */; };
+		4E0004E5225CD7DF00D3BEBF /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E0004E4225CD7DF00D3BEBF /* ViewController.xib */; };
+		4E0004E9225CDB6200D3BEBF /* imageShowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E0004E7225CDB6200D3BEBF /* imageShowViewController.m */; };
+		4E0004EA225CDB6200D3BEBF /* imageShowViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E0004E8225CDB6200D3BEBF /* imageShowViewController.xib */; };
 		4E74C07A225B1461000548A1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E74C079225B1461000548A1 /* AppDelegate.m */; };
 		4E74C07D225B1461000548A1 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E74C07C225B1461000548A1 /* ViewController.m */; };
 		4E74C080225B1461000548A1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E74C07E225B1461000548A1 /* Main.storyboard */; };
@@ -38,6 +41,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4E0004E4225CD7DF00D3BEBF /* ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ViewController.xib; sourceTree = "<group>"; };
+		4E0004E6225CDB6200D3BEBF /* imageShowViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = imageShowViewController.h; sourceTree = "<group>"; };
+		4E0004E7225CDB6200D3BEBF /* imageShowViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = imageShowViewController.m; sourceTree = "<group>"; };
+		4E0004E8225CDB6200D3BEBF /* imageShowViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = imageShowViewController.xib; sourceTree = "<group>"; };
 		4E74C075225B1461000548A1 /* NayemVaiCameraUi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NayemVaiCameraUi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E74C078225B1461000548A1 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		4E74C079225B1461000548A1 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -145,11 +152,15 @@
 				4E74C079225B1461000548A1 /* AppDelegate.m */,
 				4E74C07B225B1461000548A1 /* ViewController.h */,
 				4E74C07C225B1461000548A1 /* ViewController.m */,
+				4E0004E6225CDB6200D3BEBF /* imageShowViewController.h */,
+				4E0004E7225CDB6200D3BEBF /* imageShowViewController.m */,
+				4E0004E8225CDB6200D3BEBF /* imageShowViewController.xib */,
 				4E74C07E225B1461000548A1 /* Main.storyboard */,
 				4E74C081225B1462000548A1 /* Assets.xcassets */,
 				4E74C083225B1462000548A1 /* LaunchScreen.storyboard */,
 				4E74C086225B1462000548A1 /* Info.plist */,
 				4E74C087225B1462000548A1 /* main.m */,
+				4E0004E4225CD7DF00D3BEBF /* ViewController.xib */,
 			);
 			path = NayemVaiCameraUi;
 			sourceTree = "<group>";
@@ -281,6 +292,8 @@
 			files = (
 				4E74C085225B1462000548A1 /* LaunchScreen.storyboard in Resources */,
 				4E74C082225B1462000548A1 /* Assets.xcassets in Resources */,
+				4E0004E5225CD7DF00D3BEBF /* ViewController.xib in Resources */,
+				4E0004EA225CDB6200D3BEBF /* imageShowViewController.xib in Resources */,
 				4E74C080225B1461000548A1 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -400,6 +413,7 @@
 				4E74C07D225B1461000548A1 /* ViewController.m in Sources */,
 				4E74C088225B1462000548A1 /* main.m in Sources */,
 				4E74C07A225B1461000548A1 /* AppDelegate.m in Sources */,
+				4E0004E9225CDB6200D3BEBF /* imageShowViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
