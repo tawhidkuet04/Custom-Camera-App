@@ -1,0 +1,16 @@
+PODS:
+  - JPSImagePickerController (0.0.1)
+
+DEPENDENCIES:
+  - JPSImagePickerController
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - JPSImagePickerController
+
+SPEC CHECKSUMS:
+  JPSImagePickerController: 46e92b9f60596ac6ae066b35a9932c280c6cc0f5
+
+PODFILE CHECKSUM: 3a520754c52b724c370ad326307a71185cc27a65
+
+COCOAPODS: 1.6.1

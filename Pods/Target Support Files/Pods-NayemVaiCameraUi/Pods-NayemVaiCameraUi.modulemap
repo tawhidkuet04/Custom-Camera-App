@@ -1,0 +1,6 @@
+framework module Pods_NayemVaiCameraUi {
+  umbrella header "Pods-NayemVaiCameraUi-umbrella.h"
+
+  export *
+  module * { export * }
+}
